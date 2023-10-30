@@ -1,8 +1,9 @@
 import React from 'react'
+import { Text } from './NotFound.styled'
 
 const NotFound = () => {
   return (
-    <div>NotFound</div>
+    <Text>Opps Please reload page</Text>
   )
 }
 

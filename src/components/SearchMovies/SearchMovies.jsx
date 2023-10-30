@@ -1,28 +1,40 @@
-import React from 'react'
-import { useSearchParams } from 'react-router-dom'
 
-const SearchMovies = () => {
-    const [searchParams, setSearchParams] = useSearchParams();
-    const name = searchParams.get('name') ?? ''
+import { useState } from 'react';
+import { Button, Form, Input, MovieWrapper, Title } from './SearchMovies.styled';
 
-    const hendleSubmit = e => {
-        e.preventDefault()
-        const form = e.currentTarget
-        setSearchParams({ name: form.elements.name.value });
-        form.reset();
-    }
-    return (
-     
-        <form onSubmit={hendleSubmit}> 
-            <p>Search movies</p>
-            <input type="text"
-                name='name'
-            />
-            <button type='submit'>Send</button>
-            <p>{name}</p>
-            
-    </form>
-  )
-}
+
+const SearchMovies = ({ setMovieSearch }) => {
+
+  const [query, setQuery] = useState('')
+  
+  const handleSubmit = e => {
+    e.preventDefault();
+    setMovieSearch(query);
+  
+    };
+      const handleChange = ({ target: { value } }) => {
+        setQuery(value);    
+      
+  };
+
+
+
+  return (
+    <>
+      <MovieWrapper>
+        <Title>Search movies</Title>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            onChange={handleChange}
+            type="text"
+            name="query"
+            value={query}
+          />
+          <Button type="submit">Send</Button>
+        </Form>
+      </MovieWrapper>
+    </>
+  );
+};
 
 export default SearchMovies

@@ -1,29 +1,24 @@
-import { getTopMovies } from 'api';
-import MoviesItems from 'components/MoviesItems/MoviesItems';
-import { useEffect, useState } from "react"
 
-const MoviesList = () => {
-    const [movies, setMovies] = useState([])
-    useEffect(() => {
-        async function getMovies () {
-            try {
-              
-                const movi = await getTopMovies();
-                setMovies([...movi.results]);
-            } catch (error) {
-                console.error('dcvrvfinvhbvibdsiyvbf')
-            }
-        }
-        getMovies()
-},[movies])
+import MoviesItems from 'components/MoviesItems/MoviesItems';
+
+import { List, PageTitle, StyleLink } from './MoviesList.styled';
+
+
+const MoviesList = ({movies}) => {
+ 
    
   return (
     <div>
-      <ul>
+      <PageTitle>Trading today</PageTitle>
+      <List>
         {movies.map(movie => (
-         <MoviesItems movie={movie} />
+          <>
+            <StyleLink to={`/movies/${movie.id}`}>
+              <MoviesItems movie={movie} />
+            </StyleLink>
+          </>
         ))}
-      </ul>
+      </List>
     </div>
   );
 }
