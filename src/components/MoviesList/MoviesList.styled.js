@@ -12,6 +12,3 @@ export const List = styled.ul`
   gap: 30px;
   max-width: calc(100% - 36px);
 `;
-export const StyleLink = styled(NavLink)`
-text-decoration: none;
-`

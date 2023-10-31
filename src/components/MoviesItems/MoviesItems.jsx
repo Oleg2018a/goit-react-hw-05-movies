@@ -1,8 +1,10 @@
 import React from 'react';
-import { Item, Title } from './MoviesItem.styled';
+import { Item, StyleLink, Title } from './MoviesItem.styled';
+import { useLocation } from 'react-router-dom';
 
 const MoviesItems = ({ movie }) => {
-    
+     const location = useLocation();
+     console.log(location.state);
   const defaultImg =
     'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
     
@@ -12,12 +14,14 @@ const MoviesItems = ({ movie }) => {
   return (
     <div>
       <Item key={movie.id}>
-        <img
-          src={movie.poster_path ? moviesImg : defaultImg}
-          alt="weqw"
-          width={200}
-        />
-        <Title>{movie.title || movie.name}</Title>
+        <StyleLink to={`/movies/${movie.id}`} state={{ from: location }}>
+          <img
+            src={movie.poster_path ? moviesImg : defaultImg}
+            alt="weqw"
+            width={200}
+          />
+          <Title>{movie.title || movie.name}</Title>
+        </StyleLink>
       </Item>
     </div>
   );

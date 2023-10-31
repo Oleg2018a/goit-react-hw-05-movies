@@ -2,11 +2,12 @@
 import { getDetails } from 'api'
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 import React, { useEffect, useState } from 'react'
-import {   Outlet,  useParams } from 'react-router-dom'
+import {   Outlet,    useParams } from 'react-router-dom'
 import { Link, Paragraf } from './Page.Styled';
-import ButtonBack from 'components/BackToLink/BackToLInk';
+
 import NotFound from 'components/NotFound/NotFound';
 import Loader from 'components/Loader/Loader';
+import ButtonBack from 'components/BackToLink/BackToLInk';
 
 
 const MovieDetailsPage = () => {
@@ -40,8 +41,8 @@ const MovieDetailsPage = () => {
   return (
     <>
       <ButtonBack/>
-      {loading ? <Loader/> : <MovieDetails movie={moviesDetails} />}
-      {error && <NotFound/>}
+      {loading ? <Loader /> : <MovieDetails movie={moviesDetails} />}
+      {error && <NotFound />}
       <Paragraf>
         <Link to="credits">Cast</Link>
       </Paragraf>

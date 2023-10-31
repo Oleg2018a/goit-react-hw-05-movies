@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Item = styled.li`
@@ -11,4 +12,7 @@ export const Title = styled.h3`
   color: #9f9f9f;
   font-size: 15px;
   font-weight: 16px;
+`;
+export const StyleLink = styled(NavLink)`
+  text-decoration: none;
 `;
