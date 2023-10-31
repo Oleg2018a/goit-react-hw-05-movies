@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 const ButtonBack = () => {
   let location = useLocation();
    const backLinkHref = location.state?.from ?? '/';
-console.log(location)
+
 
   return (
     <Link to={backLinkHref}  >

@@ -18,7 +18,7 @@ const Credits = () => {
         };
         getCreditsTeam(moviesId);
     },[ moviesId])
-    console.log(credits)
+ 
   
     return (
         <>

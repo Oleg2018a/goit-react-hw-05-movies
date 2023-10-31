@@ -20,7 +20,7 @@ const Reviews = () => {
     }
      getReviewUser(moviesId);
   }, [moviesId])
-  console.log(reviews)
+ 
   return (
     <>
       <>
