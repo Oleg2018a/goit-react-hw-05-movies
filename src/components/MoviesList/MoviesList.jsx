@@ -1,11 +1,5 @@
-
 import MoviesItems from 'components/MoviesItems/MoviesItems';
-
 import { List, PageTitle } from './MoviesList.styled';
-
-
-
-
 const MoviesList = ({movies}) => {
  
   return (

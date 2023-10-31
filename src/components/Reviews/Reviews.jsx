@@ -2,7 +2,7 @@ import { GetReviews } from 'api'
 import ReviewsList from 'components/ReviewsList/ReviewsList'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Eror } from './Reviews.styled'
+
 
 const Reviews = () => {
   const {moviesId} = useParams()
