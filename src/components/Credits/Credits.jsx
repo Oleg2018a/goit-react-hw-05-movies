@@ -22,7 +22,6 @@ const Credits = () => {
   
     return (
         <>
-            
             <CreditsList credits={credits} />
            
       </>
