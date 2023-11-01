@@ -2,7 +2,7 @@
 import { getDetails } from 'api'
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 import React, { useEffect, useState } from 'react'
-import {   Outlet,    useParams } from 'react-router-dom'
+import {   Outlet,        useParams } from 'react-router-dom'
 import { Link, Paragraf } from './Page.Styled';
 
 import NotFound from 'components/NotFound/NotFound';
@@ -16,6 +16,7 @@ const MovieDetailsPage = () => {
    const [loading, setLoading] = useState(false);
    const [error, setError] = useState(false);
  
+
   
   useEffect(() => {
     if(moviesDetails) return
@@ -47,7 +48,7 @@ const MovieDetailsPage = () => {
         <Link to="credits">Cast</Link>
       </Paragraf>
       <Paragraf>
-        <Link to="reviews">Reviews</Link>
+        <Link to="reviews" >Reviews</Link>
       </Paragraf>
       <Outlet />
     </>
